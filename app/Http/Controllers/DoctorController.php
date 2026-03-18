@@ -69,14 +69,14 @@ class DoctorController extends Controller
         //
     }
 
-    public function search(Request $request){
+    public function search(Request$request){
         $query=Doctor::query();
         if($request->has('specialty')){
             $query->where('specialty', 'like', '%'.$request->specialty.'%');
 
         }
          if($request->has('city')){
-            $query->where('city', 'like', '%'.$request->specialty.'%');
+            $query->where('city', 'like', '%'.$request->city.'%');
 
         }
         $results=$query->get();
