@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SymptomsController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\Api\HealthAdviceController;
 
 
 Route::get('/user', function (Request $request) {
@@ -28,6 +29,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/doctors', [DoctorController::class, 'index']);
     Route::get('/doctors/search', [DoctorController::class, 'search']);
     Route::get('/doctors/{id}', [DoctorController::class, 'show']);
+    Route::post('/ai/health-advice', [HealthAdviceController::class, 'generate']);
+    Route::get('/ai/history', [HealthAdviceController::class, 'index']);
+
 
 
     Route::get('/me', function (Request $request) {
