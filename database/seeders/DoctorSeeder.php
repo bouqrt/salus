@@ -20,7 +20,7 @@ class DoctorSeeder extends Seeder
             'city' => 'Casablanca',
             'years_of_experience' => 12,
             'consultation_price' => 300.00,
-            'available_days' => ['Lundi', 'Mercredi', 'Vendredi'] // Hna l-Array PHP!
+            'available_days' => ['Lundi', 'Mercredi', 'Vendredi'] 
         ]);
 
         Doctor::create([
